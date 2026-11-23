@@ -1,0 +1,90 @@
+{
+  "A074147_row_4": [
+    6,
+    8,
+    10,
+    12
+  ],
+  "OEIS_value_comparisons": 538,
+  "arithmetic": "exact integers and rational numbers",
+  "characteristic_polynomials": {
+    "cases": 25,
+    "n_max": 24,
+    "n_min": 0
+  },
+  "diagonal_sums": {
+    "cases": 10100,
+    "n_max": 100,
+    "n_min": 1
+  },
+  "entry_factorization_and_linear_sums": {
+    "n_max": 100,
+    "n_min": 1
+  },
+  "fixed_size_antidiagonal_n4": [
+    4,
+    6,
+    10,
+    16
+  ],
+  "power_traces": {
+    "cases": 184,
+    "exponent_max": 8,
+    "exponent_min": 1,
+    "n_max": 24,
+    "n_min": 2
+  },
+  "principal_minor_exterior_traces": {
+    "cases": 63,
+    "n_max": 8,
+    "n_min": 0,
+    "orders": "0 through n+2",
+    "principal_minors": 511
+  },
+  "sibling_checks": {
+    "A246696_paired_interval_cases": 50,
+    "A246696_parity_rows": 101,
+    "A246696_permutation_prefix_entries": 5151,
+    "A246697_GF_coefficients": 202,
+    "A246697_recurrence_cases": 95,
+    "A246697_rows": 101,
+    "A317297_bisection_cases": 50,
+    "A317297_polynomial_and_GF_cases": 100,
+    "antidiagonal_product_and_trailing_zero_cases": 101,
+    "arbitrary_orientation_characteristic_cases": 508,
+    "displayed_shifted_function_x2": "5/24",
+    "even_and_variable_row_step_characteristic_cases": 60,
+    "first_offdiagonal_parity_and_terminal_digit_cases": 99,
+    "first_upper_offdiagonal_residues_even": [
+      0,
+      2,
+      0,
+      8,
+      0
+    ],
+    "first_upper_offdiagonal_residues_odd": [
+      0,
+      6,
+      0,
+      6,
+      8
+    ],
+    "generating_function_exact_coefficients": 287,
+    "ordinary_EGF_x2": "5/2",
+    "parity_recurrence_cases": 192,
+    "permanent_direct_permutation_cases": 9,
+    "printed_A317297_n3_characteristic": [
+      1,
+      -24,
+      -52,
+      0,
+      0
+    ],
+    "reciprocal_partial_fraction_cases": 200
+  },
+  "signed_second_exterior_trace": {
+    "n_max": 100,
+    "n_min": 1
+  },
+  "status": "pass"
+}

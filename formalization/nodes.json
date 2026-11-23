@@ -1,0 +1,444 @@
+{
+  "nodes": [
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s1",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s1",
+      "kind": "paper",
+      "label": "Theorem",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s1",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "Write $\\eps=n\\bmod2$ and\n\\begin{equation}\n T_n=\\frac{n(n^2+\\eps)}2,\\qquad\n A_n=\\frac{n^2}{12}\\{3(1+n^2)-2(2+n^2)\\eps\\}\n =\\begin{cases}\n n^2(n^2+1)/4,&n\\text{ even},\\\\\n n^2(n^2-1)/12,&n\\text{ odd}.\n \\end{cases}\n\\end{equation}\nFor every integer $n\\geq2$,\n\\begin{equation}\n \\det(xI-M(n))=x^{n-2}(x^2-T_nx-A_n).\n\\end{equation}\nConsequently $e_1(M(n))=T_n$, $e_2(M(n))=-A_n$, and\n$|e_2(M(n))|=A_n=a(n)$ in A322844. For every $n\\geq0$ and $k>2$,\n$e_k(M(n))=0$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s10",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s10",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s10",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "The ordinary generating function is\n\\[\n G(x)=\\sum_{n\\geq0}a_nx^n=\n \\frac{x^2(5+6x+43x^2+20x^3+43x^4+6x^5+5x^6)}{(1-x^2)^5}.\n\\]\nIts even and odd subsequence generating functions are respectively\n\\[\n \\sum_{m\\geq0}a_{2m}x^m=\\frac{x(5+43x+43x^2+5x^3)}{(1-x)^5},\\quad\n \\sum_{m\\geq0}a_{2m+1}x^m=\\frac{2x(3+10x+3x^2)}{(1-x)^5}.\n\\]\nBoth subsequences satisfy the order-five recurrence with coefficients\n$5,-10,10,-5,1$, starting at subsequence index $m=5$.\nThe exponential generating function in the usual convention is\n\\begin{equation}\n E(x):=\\sum_{n\\geq0}a_n\\frac{x^n}{n!}\n =\\frac{e^x(2x^4+12x^3+15x^2+3x)\n       +e^{-x}(x^4-6x^3+9x^2-3x)}{12}.\n\\end{equation}\nThe usual exponential generating functions of $a_{2m}$ and $a_{2m+1}$\nare $(4\\Theta^4+\\Theta^2)e^x$ and\n$(4\\Theta^4+8\\Theta^3+5\\Theta^2+\\Theta)e^x/3$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s11",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s11",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s11",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "The reciprocal identities recorded in A322844 are\n\\begin{align*}\n \\sum_{m\\geq1}\\frac1{a_{2m}}&=2+\\frac{\\pi^2}{6}-\\pi\\coth(\\pi/2),\\\\\n \\sum_{m\\geq1}\\frac1{a_{2m+1}}&=15-\\frac{3\\pi^2}{2},\\\\\n \\sum_{n\\geq2}\\frac1{a_n}&=17-\\frac{4\\pi^2}{3}-\\pi\\coth(\\pi/2).\n\\end{align*}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s2",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s2",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s2",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "Choose any signs $s_i\\in\\{-1,1\\}$ to select forward or backward rows,\nand retain $u_i,w_j$ from \\eqref{factorization}. Put\n$S=\\sum_i s_i$, $W=\\sum_i s_iw_i$,\n$C=n(n^2+1)/2$, and $D=n^2(n^2-1)/12$.\nFor $n\\geq2$, the resulting matrix has characteristic polynomial\n\\[\n x^{n-2}\\{x^2-(C+W)x+CW-SD\\}.\n\\]\nIn particular every exterior trace of order above two vanishes for any\nrow-direction pattern.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s3",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s3",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s3",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "For $n\\geq2$, $M(n)$ has rank two and is diagonalizable over $\\mathbb R$.\nIts two nonzero eigenvalues are\n\\[\n \\lambda_{\\pm}=\\frac{T_n\\pm\\sqrt{T_n^2+4A_n}}2,\n \\qquad \\lambda_-<0<\\lambda_+,\n\\]\nand its other $n-2$ eigenvalues are zero. If $p_r=\\tr(M(n)^r)$ for\n$r\\geq1$, and $p_0=2$, then\n\\[\n p_1=T_n,\\qquad p_2=T_n^2+2A_n,\\qquad\n p_r=T_np_{r-1}+A_np_{r-2}\\quad(r\\geq2).\n\\]\nHere $p_0$ counts the two nonzero eigenvalues, not the trace of $I_n$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s4",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s4",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s4",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "For $n=2m\\geq2$, the nonzero eigenvalues are\n\\[\n \\lambda_+=m(4m^2+1),\\qquad \\lambda_-=-m.\n\\]\nIn particular $\\rho(M(2m))=m(4m^2+1)$, and the minimum eigenvalue\nis $-m$. This gives a spectral interpretation of A317614, FORMULA,\n28 December 2018, and the size-indexed version of Spezia's conjecture\nin A317297, COMMENTS, 27 December 2018 \\cite{eigen}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s5",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s5",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s5",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "Put $b(r)=(r-1)(4(r-1)^2+1)$ for $r\\geq1$. Its ordinary generating\nfunction, with the source index, and its offset-normalized exponential\ngenerating function are\n\\[\n \\sum_{r\\geq1}b(r)x^r=\\frac{x^2(5+14x+5x^2)}{(1-x)^4},\\qquad\n \\sum_{m\\geq0}b(m+1)\\frac{x^m}{m!}=x(5+12x+4x^2)e^x.\n\\]\nThe recurrence is $b(r)=4b(r-1)-6b(r-2)+4b(r-3)-b(r-4)$ for $r\\geq5$;\nit also holds at $r=4$ with the polynomial extension $b(0)=-5$.\nThe further descriptions in A317297, COMMENTS and FORMULA (Oktar, 2024;\nNavarrete, 2025), follow from\n\\[\n b(r)=\\frac{(2r-1)^4-(2r-3)^4}{16}\n     =3\\binom{2r-1}{3}+2(r-1).\n\\]\nFor $r=1$ the binomial term is zero. The second identity also counts\n$b(r)+1$ ternary words of length $L=2r-1$ with exactly one $1$ and\neither zero or two $0$'s: choose the $1$ in $L$ ways and the two $0$'s,\nif present, in $\\binom{L-1}{2}$ ways. Thus the count is\n$L+L\\binom{L-1}{2}=b(r)+1$. Both polynomial identities follow by expansion.\nIf $c(j)$ denotes row $j$ of A246696 summed across the row (A246697),\nnumbered from $0$, then\n\\[\n c(2m)=4m^3+6m^2+5m+1,\\qquad c(2m-1)=4m^3+m\\ (m\\geq1).\n\\]\nConsequently $b(r)=c(2r-3)$ for $r\\geq2$, proving the bisection\nconjecture in A317297, CROSSREFS (entry by Pol, 1 September 2018) \\cite{trianglelinks}.\nThese row-sum formulas also prove the equivalent closed-form conjectures\nin A246697, FORMULA (Kimberling, 2014; Etienne, 2016; Spezia, 2021).\nIn full-index form, $c(j)=(2j^3+6j^2+9j+4+j(-1)^j)/4$; hence\n\\[\n \\sum_{j\\geq0}c(j)x^j=\\frac{1+3x+5x^2+x^3+2x^4}{(1-x)^4(1+x)^2},\\quad\n \\sum_{j\\geq0}c(j)\\frac{x^j}{j!}\n =\\frac{e^x(2x^3+12x^2+17x+4)-xe^{-x}}4.\n\\]\nThis proves its conjectured ordinary and exponential generating functions\n(the latter equals the source's hyperbolic expression), and the recurrence\nwith signature $(2,1,-4,1,2,-1)$ for $j\\geq6$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s6",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s6",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s6",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "For $m\\geq1$, row $2m$ of A246696 contains $m$ even and $m+1$ odd entries, while\nrow $2m-1$ contains $m$ entries of each parity. Every positive integer\noccurs exactly once. Thus the stated permutation property is true, but\nthe printed count $[(m+1)/2]$ of odd entries in row $2m$ is replaced\nby $m+1$; already row $2$ is $(5,4,7)$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s7",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s7",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s7",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "For $n\\geq2$, the first lower and upper diagonal sums in A323723 and A323724 are even.\nThe upper sum never has terminal digit $4$, as asserted in A323724,\nCOMMENTS \\cite{diagonals}.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s8",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s8",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s8",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "The sequence A382597 \\cite{antiproductref} is\n\\[\n Q_n=\\prod_{\\substack{1\\leq i\\leq n\\\\ i\\text{ odd}}}((n-1)i+1)\n     \\prod_{\\substack{1\\leq i\\leq n\\\\ i\\text{ even}}}((n+1)i-n).\n\\]\nAs recorded there, $Q_n$ has a trailing zero exactly when $n$ is even\nand $n\\notin\\{0,2,6\\}$.",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    },
+    {
+      "attribution": null,
+      "authors": [
+        {
+          "affiliation": "ChronoAI Pte Ltd, Singapore",
+          "name": "Haobo Ma"
+        },
+        {
+          "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+          "name": "Wenlin Zhang"
+        }
+      ],
+      "claim": "s9",
+      "contributor": null,
+      "identity": "collected:sp322844-serpentine:3:s9",
+      "kind": "paper",
+      "label": "Corollary",
+      "lean_source": {
+        "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+        "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+      },
+      "lineage": "collected:sp322844-serpentine:s9",
+      "macros": {
+        "\\eps": "\\varepsilon",
+        "\\tr": "\\operatorname{tr}"
+      },
+      "next_step": "Existing Lean evidence is being checked before new proof work.",
+      "proof_basis": null,
+      "proof_state": "preparing",
+      "receipt": null,
+      "record": "sp322844-serpentine",
+      "scope": "in_scope",
+      "statement": "Let $\\alpha_k=[z^k]\\prod_{i=1}^n(u_i+s_i z)$ and\n$\\beta_k=[z^k]\\prod_{j=1}^n(1+w_jz)$. Then the permanent in A322277\n\\cite{permanentref} is\n\\begin{equation}\n \\operatorname{per}M(n)=\\sum_{k=0}^n k!(n-k)!\\,\\alpha_k\\beta_k.\n\\end{equation}",
+      "status": "preparing",
+      "target_digest": null,
+      "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+      "toolchain": null,
+      "version": 3,
+      "work": "sp322844-serpentine"
+    }
+  ]
+}

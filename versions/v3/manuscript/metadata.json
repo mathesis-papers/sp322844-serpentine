@@ -1,0 +1,24 @@
+{
+  "id": "sp322844-serpentine",
+  "revision": 3,
+  "problem_ids": [
+    "sp322844-serpentine",
+    "sp322844-serpentine-higher"
+  ],
+  "topic": "The exterior-trace conjectures of OEIS A322844, COMMENTS, first posed 28 December 2018 and 6 January 2019",
+  "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+  "creators": [
+    {
+      "name": "Ma, Haobo",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Zhang, Wenlin",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "For the conjectures in OEIS A322844, COMMENTS, first posed on 28 December 2018 and 6 January 2019, we extend the arithmetic-row rank argument of Vinay (2019) and Wicklin (2021) to an explicit spectral formula. For the n by n row-serpentine matrix, the characteristic polynomial is x^(n-2)(x^2-T_n*x-A_n), with T_n=n(n^2+(n mod 2))/2 and A_n=n^2[3(1+n^2)-2(2+n^2)(n mod 2)]/12. Thus the signed second exterior trace is -A_n and all higher exterior traces vanish. Written corollaries give spectra, arbitrary row directions, linked sum and permanent formulas, generating functions, reciprocal sums, the A246696 permutation property and corrected even-row odd count, and first off-diagonal parity and terminal-digit statements. General rank antecedents and the earlier even-order sum proofs of De Los Reyes et al. (2007) are credited. The relation of the unavailable 2012 Miranda construction articles to the explicit spectral coefficient remains unresolved; no priority claim is made.",
+  "summary": "For n>=2, det(xI-M(n))=x^(n-2)(x^2-T_n*x-A_n), with T_n=n(n^2+(n mod 2))/2 and A_n=n^2[3(1+n^2)-2(2+n^2)(n mod 2)]/12. Thus e_2=-A_n and e_k=0 for k>2. The argument extends to arbitrary row directions. Even-dimensional eigenvalues, the A246697 row-sum conjectures, a permanent formula and the analytic identities have written proofs. Exact coefficient identities correct the overall EGF and clarify the subsequence factorial conventions; an explicit example corrects the literal dimension parameter in A317297. Further corollaries prove A246696's permutation property, correct its even-row odd count to m+1, and prove the first off-diagonal parity and terminal-digit assertions. Higher-exterior vanishing specializes the earlier general rank argument of Vinay (2019), followed by Wicklin (2021).",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+}

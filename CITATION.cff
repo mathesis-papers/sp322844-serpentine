@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this work, cite it."
+title: "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019"
+authors:
+  - name: "Haobo Ma"
+  - name: "Wenlin Zhang"
+date-released: "2026-11-22"
+version: "3"
+url: "https://mathesis-omega-research.apps.chrono-ai.fun/papers/sp322844-serpentine?version=3"
+license: "CC-BY-4.0"

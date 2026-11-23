@@ -1,0 +1,66 @@
+{
+  "files": {
+    "pdf": {
+      "bytes": 116123,
+      "matches_public": true,
+      "path": "paper.pdf",
+      "public_sha256": "597ad8597fe0befe98d7433456b9bffa50c324922d5de12400279118ea63a5c2",
+      "sha256": "597ad8597fe0befe98d7433456b9bffa50c324922d5de12400279118ea63a5c2"
+    },
+    "source": {
+      "bytes": 24675,
+      "matches_public": true,
+      "path": "source.archive",
+      "public_sha256": "da6fa7c0d498e54cb3bda05d76bb4a384bc62320f7a667a321a179fc13424084",
+      "sha256": "da6fa7c0d498e54cb3bda05d76bb4a384bc62320f7a667a321a179fc13424084"
+    }
+  },
+  "source_identity": "Mathesis public projection",
+  "work": {
+    "abstract_text": "For the conjectures in OEIS A322844, COMMENTS, first posed on 28 December 2018 and 6 January 2019, we extend the arithmetic-row rank argument of Vinay (2019) and Wicklin (2021) to an explicit spectral formula. For the n by n row-serpentine matrix, the characteristic polynomial is x^(n-2)(x^2-T_n*x-A_n), with T_n=n(n^2+(n mod 2))/2 and A_n=n^2[3(1+n^2)-2(2+n^2)(n mod 2)]/12. Thus the signed second exterior trace is -A_n and all higher exterior traces vanish. Written corollaries give spectra, arbitrary row directions, linked sum and permanent formulas, generating functions, reciprocal sums, the A246696 permutation property and corrected even-row odd count, and first off-diagonal parity and terminal-digit statements. General rank antecedents and the earlier even-order sum proofs of De Los Reyes et al. (2007) are credited. The relation of the unavailable 2012 Miranda construction articles to the explicit spectral coefficient remains unresolved; no priority claim is made.",
+    "authors": [
+      {
+        "affiliation": "ChronoAI Pte Ltd, Singapore",
+        "name": "Haobo Ma"
+      },
+      {
+        "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore",
+        "name": "Wenlin Zhang"
+      }
+    ],
+    "concept_doi": null,
+    "current_version": 3,
+    "doi": null,
+    "lean_source": {
+      "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
+      "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
+    },
+    "license": "CC-BY-4.0",
+    "msc": [],
+    "pdf": {
+      "bytes": 116123,
+      "sha256": "597ad8597fe0befe98d7433456b9bffa50c324922d5de12400279118ea63a5c2",
+      "url": "/api/v1/collected-papers/sp322844-serpentine/files/pdf?version=3"
+    },
+    "previous_version": null,
+    "publication": "public",
+    "published_on": "2026-11-22T23:23:20.543727010Z",
+    "record": "sp322844-serpentine",
+    "repository_name": "sp322844-serpentine",
+    "source": {
+      "bytes": 24675,
+      "sha256": "da6fa7c0d498e54cb3bda05d76bb4a384bc62320f7a667a321a179fc13424084",
+      "url": "/api/v1/collected-papers/sp322844-serpentine/files/source?version=3"
+    },
+    "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
+    "versions": [
+      {
+        "previous_version": null,
+        "published_on": "2026-11-22T23:23:20.543727010Z",
+        "revision": "3",
+        "version": 3
+      }
+    ],
+    "work": "sp322844-serpentine"
+  }
+}

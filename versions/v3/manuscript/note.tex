@@ -1,0 +1,614 @@
+\documentclass[11pt]{article}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array,longtable}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,urlcolor=blue,citecolor=blue,linkcolor=blue]{hyperref}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\tr}{\operatorname{tr}}
+\newcommand{\eps}{\varepsilon}
+\title{Spectral extensions of Vinay (2019) and Wicklin (2021):\\
+resolving Spezia's conjectures in OEIS A322844, COMMENTS,\\
+28 December 2018 and 6 January 2019}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore\\
+\small ChronoAI Pte Ltd, Singapore}
+\date{8 November 2026}
+\begin{document}
+\maketitle
+\begin{abstract}
+For the conjectures in OEIS A322844, COMMENTS, first posed on
+28 December 2018 and 6 January 2019 \cite{posing}, we extend the arithmetic-row rank
+argument of Vinay (2019) and Wicklin (2021) to an explicit spectral formula.
+For the $n\times n$
+matrix containing $1,\ldots,n^2$ in alternating row directions, a rank-two
+factorization gives the signed second exterior trace and the vanishing of
+every higher exterior trace. The same calculation gives the two nonzero
+eigenvalues and their power-sum recurrence, including the even-dimensional
+eigenvalue interpretation of A317614 and the conjecture in A317297. We derive the linked sum
+and permanent formulas, the generating functions and reciprocal sums,
+and distinguish three displayed exponential functions from their usual
+exponential-generating-function interpretations.
+\end{abstract}
+\noindent\textbf{License.} Creative Commons Attribution 4.0 International (CC BY 4.0).
+
+\section{The two conjectures and the characteristic polynomial}
+Under the heading ``Conjectures'', OEIS A322844, COMMENTS \cite{posing},
+asserts that for $n>1$ its sequence is the ``absolute value of the trace of
+the 2nd exterior power'' of a serpentine matrix, and that ``For $k>2$''
+the higher exterior trace is ``equal to zero''.
+The first formula appears in Spezia's original submission, revision 2
+(28 December 2018); the higher-exterior assertion was added in revision 5
+(6 January 2019). Revision 47 approved the entry on 9 February 2019.
+We prove both by writing the matrix as a product of an
+$n\times2$ matrix and a $2\times n$ matrix. The result also determines its
+characteristic polynomial, extending the determinant formula recorded in
+OEIS A317614 \cite{matrix}. Vinay's column-span argument (2019), followed
+by Wicklin's exposition (2021), already proves that an arithmetic-row
+matrix has rank at most two \cite{vinay,wicklin}. It directly implies
+higher-exterior vanishing for the present matrix and for arbitrary row
+directions; the explicit quadratic and signed second coefficient below
+are the additional calculation. The even-order construction and its sum
+identities occur earlier in De Los Reyes et al. (2007) \cite{rectangles}.
+The 2012 Miranda construction announcements \cite{miranda2012} provide
+further antecedents; the relation of their unavailable mathematical texts
+to this spectral coefficient remains unresolved. None of these comparisons
+is a priority claim. Throughout, rows and columns are numbered from $1$.
+Define
+\begin{equation}\label{matrix}
+ M(n)_{ij}=\begin{cases}
+ j+n(i-1),&i\text{ odd},\\
+ ni-j+1,&i\text{ even},
+ \end{cases}\qquad 1\leq i,j\leq n.
+\end{equation}
+For a square matrix $A$, put $e_k(A)=\tr(\bigwedge^k A)$, with
+$e_0(A)=1$ and $e_k(A)=0$ for $k>\dim A$. In the standard exterior basis,
+the diagonal entries of $\bigwedge^k A$ are the principal $k\times k$
+minors. Expanding the determinant by choosing either $x$ or an entry of
+$-A$ in each row therefore gives
+\begin{equation}\label{exterior}
+ \det(xI-A)=\sum_{k=0}^{n}(-1)^k e_k(A)x^{n-k}.
+\end{equation}
+This is the characteristic-coefficient convention in the posing entry.
+
+\begin{theorem}\label{main}
+Write $\eps=n\bmod2$ and
+\begin{equation}\label{constants}
+ T_n=\frac{n(n^2+\eps)}2,\qquad
+ A_n=\frac{n^2}{12}\{3(1+n^2)-2(2+n^2)\eps\}
+ =\begin{cases}
+ n^2(n^2+1)/4,&n\text{ even},\\
+ n^2(n^2-1)/12,&n\text{ odd}.
+ \end{cases}
+\end{equation}
+For every integer $n\geq2$,
+\begin{equation}\label{charpoly}
+ \det(xI-M(n))=x^{n-2}(x^2-T_nx-A_n).
+\end{equation}
+Consequently $e_1(M(n))=T_n$, $e_2(M(n))=-A_n$, and
+$|e_2(M(n))|=A_n=a(n)$ in A322844. For every $n\geq0$ and $k>2$,
+$e_k(M(n))=0$.
+\end{theorem}
+
+\section{A two-dimensional calculation}
+For $1\leq i,j\leq n$, set
+\[
+ s_i=(-1)^{i-1},\qquad
+ w_j=j-\frac{n+1}{2},\qquad
+ u_i=ni-\frac{n-1}{2}.
+\]
+Direct substitution in the two cases of \eqref{matrix} gives
+\begin{equation}\label{factorization}
+ M(n)_{ij}=u_i+s_iw_j,\qquad M(n)=UV,\qquad
+ U=\begin{pmatrix}u_1&s_1\\\vdots&\vdots\\u_n&s_n\end{pmatrix},\quad
+ V=\begin{pmatrix}1&\cdots&1\\w_1&\cdots&w_n\end{pmatrix}.
+\end{equation}
+The centered sums are
+\begin{equation}\label{moments}
+ \sum_i w_i=0,\quad
+ \sum_i w_i^2=\frac{n(n^2-1)}{12},\quad
+ \sum_i s_i=\eps,\quad
+ \sum_i i s_i=\frac{-n+(2n+1)\eps}{2}.
+\end{equation}
+The first two follow from $\sum i=n(n+1)/2$ and
+$\sum i^2=n(n+1)(2n+1)/6$, by expansion. Pairing consecutive terms
+gives the last two: each pair contributes $0$ and $-1$, respectively;
+when $n$ is odd, the remaining term contributes $1$ and $n$.
+It follows that $\sum_i s_iw_i=-n(1-\eps)/2$.
+Also $u_i=nw_i+(n^2+1)/2$, so
+\begin{equation}\label{small}
+ B:=VU=\begin{pmatrix}
+ n(n^2+1)/2&\eps\\
+ n^2(n^2-1)/12&-n(1-\eps)/2
+ \end{pmatrix}.
+\end{equation}
+Its trace is $T_n$, and its determinant is
+\[
+ -\frac{n^2(n^2+1)(1-\eps)}4
+ -\frac{\eps n^2(n^2-1)}{12}=-A_n.
+\]
+
+For $n\geq2$ the columns of $U$ are linearly independent: their first
+two coordinates form a $2\times2$ matrix of determinant
+$-u_1-u_2=-(2n+1)\ne0$. The image of $U$ is invariant under $M$, since
+$MU=UB$, and the induced map on the quotient by this image is zero,
+since $M=UV$. Extend the two columns of $U$ to a basis. In that basis
+$M$ has block form $\left(\begin{smallmatrix}B&C\\0&0\end{smallmatrix}\right)$,
+which proves \eqref{charpoly} by taking the determinant of $xI-M$.
+Comparison with \eqref{exterior} proves the asserted exterior traces.
+Both parity formulas for $A_n$ are positive when $n\geq2$, so its
+absolute-value assertion follows as well. For $n=0$ the matrix is empty;
+for $n=1$ it is $(1)$. Their higher exterior spaces are zero, which
+completes the boundary cases.\hfill$\square$
+
+\begin{corollary}[Arbitrary row directions; not posed in the source]\label{directions}
+Choose any signs $s_i\in\{-1,1\}$ to select forward or backward rows,
+and retain $u_i,w_j$ from \eqref{factorization}. Put
+$S=\sum_i s_i$, $W=\sum_i s_iw_i$,
+$C=n(n^2+1)/2$, and $D=n^2(n^2-1)/12$.
+For $n\geq2$, the resulting matrix has characteristic polynomial
+\[
+ x^{n-2}\{x^2-(C+W)x+CW-SD\}.
+\]
+In particular every exterior trace of order above two vanishes for any
+row-direction pattern.
+\end{corollary}
+\begin{proof}
+The same factorization gives $VU=\left(\begin{smallmatrix}C&S\\D&W\end{smallmatrix}\right)$.
+The two columns of $U$ are independent because $u_1,u_2$ are positive and
+unequal and $s_1,s_2$ are signs. Apply the same invariant-subspace argument.
+\end{proof}
+
+\section{Spectral consequences and the linked matrix sequences}
+\begin{corollary}\label{spectrum}
+For $n\geq2$, $M(n)$ has rank two and is diagonalizable over $\mathbb R$.
+Its two nonzero eigenvalues are
+\[
+ \lambda_{\pm}=\frac{T_n\pm\sqrt{T_n^2+4A_n}}2,
+ \qquad \lambda_-<0<\lambda_+,
+\]
+and its other $n-2$ eigenvalues are zero. If $p_r=\tr(M(n)^r)$ for
+$r\geq1$, and $p_0=2$, then
+\[
+ p_1=T_n,\qquad p_2=T_n^2+2A_n,\qquad
+ p_r=T_np_{r-1}+A_np_{r-2}\quad(r\geq2).
+\]
+Here $p_0$ counts the two nonzero eigenvalues, not the trace of $I_n$.
+\end{corollary}
+\begin{proof}
+Since $\det B=-A_n\ne0$, the rank of $UV$ is two. The roots of its
+quadratic factor are distinct and nonzero, with negative product.
+The kernel of $M$ has dimension $n-2$, equal to the multiplicity of zero
+in \eqref{charpoly}; together with the other two eigenspaces this gives
+a basis of eigenvectors. Finally $p_r=\lambda_+^r+\lambda_-^r$, and each
+root satisfies $\lambda^2=T_n\lambda+A_n$. Summing the resulting
+recurrence proves the formulas, including the stated convention at $r=0$.
+\end{proof}
+At $n=2$, the matrix is $\left(\begin{smallmatrix}1&2\\4&3\end{smallmatrix}\right)$
+and its polynomial is $x^2-4x-5$. At $n=3$ it is $x(x^2-15x-6)$.
+For $n\geq3$, \eqref{charpoly} gives $\det M(n)=0$, recovering the
+determinant identity in A317614; its complete initial values are $1,1,-5$
+at $n=0,1,2$. The determinant is already labelled proved in revision 89
+of A317614 (24 August 2018), without an accompanying argument.
+The rank pattern $0,1,2,2,\ldots$ was added there as the A130130
+cross-reference on 9 April 2023, revision 151 \cite{matrix}.
+
+\begin{corollary}[Even-dimensional eigenvalues]\label{even}
+For $n=2m\geq2$, the nonzero eigenvalues are
+\[
+ \lambda_+=m(4m^2+1),\qquad \lambda_-=-m.
+\]
+In particular $\rho(M(2m))=m(4m^2+1)$, and the minimum eigenvalue
+is $-m$. This gives a spectral interpretation of A317614, FORMULA,
+28 December 2018, and the size-indexed version of Spezia's conjecture
+in A317297, COMMENTS, 27 December 2018 \cite{eigen}.
+\end{corollary}
+\begin{proof}
+When $n$ is even, $B$ in \eqref{small} is lower triangular. Its diagonal
+entries are $n(n^2+1)/2$ and $-n/2$, which proves the assertion.
+\end{proof}
+The two entries use a separate parameter for the dimension.
+In terms of the actual dimension, the A317297 sequence is
+$b(r)=(r-1)(4(r-1)^2+1)=\rho(M(2r-2))$ for $r\geq2$;
+$b(1)=0$ agrees with the zero-dimensional linear map.
+There is a literal indexing discrepancy in its displayed matrix definition:
+the stated dimension is $2(r-1)$, but the row-step coefficient is printed
+as $r$. At $r=3$ that displayed $4\times4$ matrix is
+\[
+ \begin{pmatrix}1&2&3&4\\6&5&4&3\\7&8&9&10\\12&11&10&9\end{pmatrix},
+ \qquad \det(xI-N)=x^2(x-26)(x+2),
+\]
+whose maximum is $26$, not $b(3)=34$. Replacing the row-step coefficient
+by the dimension gives $M(4)$ and restores the claimed sequence.
+The minimum eigenvalue formula is a further corollary, not a conjecture
+asserted in A317614. More generally, for any positive row-step $h$ and even
+dimension $d$, the corresponding two eigenvalues are
+$d(hd+1)/2$ and $-d/2$. Indeed use
+$u_i=hi-(h-1)/2$, $w_j=j-(h+1)/2$ in \eqref{factorization};
+then $VU$ is triangular because $\sum s_i=0$.
+
+\begin{corollary}[The polynomial and triangle links in A317297]\label{triangle}
+Put $b(r)=(r-1)(4(r-1)^2+1)$ for $r\geq1$. Its ordinary generating
+function, with the source index, and its offset-normalized exponential
+generating function are
+\[
+ \sum_{r\geq1}b(r)x^r=\frac{x^2(5+14x+5x^2)}{(1-x)^4},\qquad
+ \sum_{m\geq0}b(m+1)\frac{x^m}{m!}=x(5+12x+4x^2)e^x.
+\]
+The recurrence is $b(r)=4b(r-1)-6b(r-2)+4b(r-3)-b(r-4)$ for $r\geq5$;
+it also holds at $r=4$ with the polynomial extension $b(0)=-5$.
+The further descriptions in A317297, COMMENTS and FORMULA (Oktar, 2024;
+Navarrete, 2025), follow from
+\[
+ b(r)=\frac{(2r-1)^4-(2r-3)^4}{16}
+     =3\binom{2r-1}{3}+2(r-1).
+\]
+For $r=1$ the binomial term is zero. The second identity also counts
+$b(r)+1$ ternary words of length $L=2r-1$ with exactly one $1$ and
+either zero or two $0$'s: choose the $1$ in $L$ ways and the two $0$'s,
+if present, in $\binom{L-1}{2}$ ways. Thus the count is
+$L+L\binom{L-1}{2}=b(r)+1$. Both polynomial identities follow by expansion.
+If $c(j)$ denotes row $j$ of A246696 summed across the row (A246697),
+numbered from $0$, then
+\[
+ c(2m)=4m^3+6m^2+5m+1,\qquad c(2m-1)=4m^3+m\ (m\geq1).
+\]
+Consequently $b(r)=c(2r-3)$ for $r\geq2$, proving the bisection
+conjecture in A317297, CROSSREFS (entry by Pol, 1 September 2018) \cite{trianglelinks}.
+These row-sum formulas also prove the equivalent closed-form conjectures
+in A246697, FORMULA (Kimberling, 2014; Etienne, 2016; Spezia, 2021).
+In full-index form, $c(j)=(2j^3+6j^2+9j+4+j(-1)^j)/4$; hence
+\[
+ \sum_{j\geq0}c(j)x^j=\frac{1+3x+5x^2+x^3+2x^4}{(1-x)^4(1+x)^2},\quad
+ \sum_{j\geq0}c(j)\frac{x^j}{j!}
+ =\frac{e^x(2x^3+12x^2+17x+4)-xe^{-x}}4.
+\]
+This proves its conjectured ordinary and exponential generating functions
+(the latter equals the source's hyperbolic expression), and the recurrence
+with signature $(2,1,-4,1,2,-1)$ for $j\geq6$.
+\end{corollary}
+\begin{proof}
+The formulas for $b$ follow by applying
+$4\Theta^3+\Theta$ to $(1-x)^{-1}$ or $e^x$, and taking fourth differences.
+For the triangle, its defining recurrence makes successive entries of
+each parity increase by $2$. Direct simultaneous induction on the row
+gives first two entries $(2m^2+2m+1,2m^2+2)$ in even row $2m$ ($m\geq1$),
+and $(2m^2-2m+2,2m^2+1)$ in odd row $2m-1$.
+The initial rows are $(1)$ and $(2,3)$.
+For $m\geq2$, from even row $2m-2$ to odd row $2m-1$, the last even-row
+entry plus $2$ is the new second entry, and the penultimate entry plus $2$
+is the new first entry. From odd row $2m-1$ to even row $2m$, the last
+entry plus $2$ is the new first entry and the preceding entry plus $2$
+is the new second entry. These are exactly the displayed polynomials.
+Summing the two arithmetic progressions gives the formulas for $c$.
+At row $0$, the even formula also gives $1$.
+Applying its full-index polynomial in $\Theta$ to $(1-x)^{-1}$ and $e^x$
+gives the displayed functions; multiplying by $(1-x)^4(1+x)^2$
+gives the recurrence and its initial conditions.
+\end{proof}
+
+\begin{corollary}[The permutation and parity counts in A246696]\label{permutation}
+For $m\geq1$, row $2m$ of A246696 contains $m$ even and $m+1$ odd entries, while
+row $2m-1$ contains $m$ entries of each parity. Every positive integer
+occurs exactly once. Thus the stated permutation property is true, but
+the printed count $[(m+1)/2]$ of odd entries in row $2m$ is replaced
+by $m+1$; already row $2$ is $(5,4,7)$.
+\end{corollary}
+\begin{proof}
+Use the first two entries and the step-two progressions in the proof of
+Corollary~\ref{triangle}. Row $2m$ starts with an odd entry and has length
+$2m+1$; row $2m-1$ starts with an even entry and has length $2m$.
+The two rows together contain exactly the even numbers from
+$2m^2-2m+2$ to $2m^2+2m$, and exactly the odd numbers from $2m^2+1$
+to $2m^2+4m+1$. These intervals are disjoint and successive paired
+intervals abut within each parity: their next lower endpoints are the
+current upper endpoints plus two. With the initial row $(1)$ this proves
+the permutation assertion, including existence and uniqueness.
+\end{proof}
+
+The other matrix sequences cross-referenced by A317614 have short formulas
+from the same decomposition. Put $\eps_m=m\bmod2$. For $n\geq1$,
+\begin{align}
+ R_i&:=\sum_j M(n)_{ij}=n^2i-\frac{n(n-1)}2,
+ &C_j&:=\sum_i M(n)_{ij}=\frac{n(n^2+1)}2+
+ \eps_n\left(j-\frac{n+1}2\right).\label{rowcol}
+\end{align}
+The even-order array already appears, transposed, in De Los Reyes,
+Das, Midha and Vellaisamy (2007), Step A1; their Appendix (i)--(ii)
+proves the corresponding sum identities \cite{rectangles}.
+The formulas in \eqref{rowcol} give a uniform parity-dependent calculation.
+These are respectively the row-sum triangle A241016 and the column-sum
+triangle A317617 \cite{sums}: A241016 lists $R_1,\ldots,R_n$, whereas A317617 lists
+$C_1,\ldots,C_n$.
+The other matrix in A317614, COMMENTS (Barari, 31 October 2021;
+Spezia, 5 November 2021), has entries
+$H_{ij}=n-|i-(n+1)/2|-|j-(n+1)/2|$ and total sum $T_n$.
+Indeed $\sum_i|i-(n+1)/2|$ is $n^2/4$ for even $n$ and $(n^2-1)/4$
+for odd $n$, so $\sum_{ij}H_{ij}=n^3-2n\sum_i|i-(n+1)/2|=T_n$.
+For $0\leq k<n$, the superdiagonal and subdiagonal sums are
+\begin{align}
+ D_k^+&:=\sum_{i=1}^{n-k}M(n)_{i,i+k}
+       =\frac n2\big((n-k)^2+\eps_{n-k}\big),\label{upper}\\
+ D_k^-&:=\sum_{i=k+1}^{n}M(n)_{i,i-k}
+       =\frac{n(n^2-k^2+\eps_n+\eps_k)-2k\eps_n}{2}.\label{lower}
+\end{align}
+They give A325516 and A325655, respectively; for $n\geq2$, $D_1^+$ gives A323724 and
+$D_1^-$ gives A323723 \cite{diagonals}. The $k=0$ instances both
+give $T_n$. Formula \eqref{rowcol} follows by summing
+\eqref{factorization}. To check \eqref{upper}--\eqref{lower}, define
+\[
+ H(m)=\sum_{i=1}^m i s_i=\frac{-m+(2m+1)\eps_m}{2}.
+\]
+For a diagonal with column $i+d$ and rows $a\leq i\leq b$, summation
+of \eqref{factorization} gives
+\begin{equation}\label{diagonalproof}
+ n\frac{(a+b)(b-a+1)}2-\frac{(n-1)(b-a+1)}2
+ +H(b)-H(a-1)+\left(d-\frac{n+1}2\right)(\eps_b-\eps_{a-1}).
+\end{equation}
+Use $(a,b,d)=(1,n-k,k)$ for \eqref{upper}, and
+$(k+1,n,-k)$ for \eqref{lower}; expanding $H$ gives the stated formulas.
+
+\begin{corollary}[First off-diagonal parity and terminal digits]\label{lastdigits}
+For $n\geq2$, the first lower and upper diagonal sums in A323723 and A323724 are even.
+The upper sum never has terminal digit $4$, as asserted in A323724,
+COMMENTS \cite{diagonals}.
+\end{corollary}
+\begin{proof}
+At $n=2m$, the lower and upper sums are respectively
+$4m^3$ and $2m(2m^2-2m+1)$; at $n=2m+1$ they are
+$2m(2m^2+3m+2)$ and $2m^2(2m+1)$, by \eqref{upper}--\eqref{lower}
+with $k=1$. Each is twice an integer. For $m=0,1,2,3,4$ modulo $5$,
+the upper sums have residues $(0,2,0,8,0)$ and $(0,6,0,6,8)$ modulo $10$,
+respectively. Because each expression is twice an integer polynomial,
+these five cases exhaust its terminal digits, none of which is $4$.
+\end{proof}
+
+The fixed-size antidiagonal is determined entrywise by
+\begin{equation}\label{anti}
+ M(n)_{i,n+1-i}=\begin{cases}(n-1)i+1,&i\text{ odd},\\
+ (n+1)i-n,&i\text{ even}.
+ \end{cases}
+\end{equation}
+This follows by substitution in \eqref{matrix}. Thus at $n=4$ it is
+$(4,6,10,16)$. Although A317614 links A074147 under antidiagonals,
+the fourth row of that triangle is $(6,8,10,12)$ \cite{antidiagonal};
+that row is not the fixed-size antidiagonal of $M(4)$.
+The cross-reference alone does not assert this fixed-size interpretation.
+
+\begin{corollary}[Antidiagonal products]\label{antiproduct}
+The sequence A382597 \cite{antiproductref} is
+\[
+ Q_n=\prod_{\substack{1\leq i\leq n\\ i\text{ odd}}}((n-1)i+1)
+     \prod_{\substack{1\leq i\leq n\\ i\text{ even}}}((n+1)i-n).
+\]
+As recorded there, $Q_n$ has a trailing zero exactly when $n$ is even
+and $n\notin\{0,2,6\}$.
+\end{corollary}
+\begin{proof}
+The product follows from \eqref{anti}. For odd $n$ every factor is odd.
+For even $n$ every factor is even. If $n\geq10$ and $n\not\equiv1\pmod5$,
+one of the odd indices $1,3,5,7,9$ makes the first factor zero modulo $5$.
+If $n\equiv1\pmod5$, one of $2,4,6,8,10$ makes the second factor zero
+modulo $5$. The case $n=8$ has antidiagonal entry $10$;
+$Q_0=1$, $Q_2=8$, $Q_4=3840$, and $Q_6=15814656$ finish the small cases.
+\end{proof}
+
+\begin{corollary}[The linked permanent]\label{permanent}
+Let $\alpha_k=[z^k]\prod_{i=1}^n(u_i+s_i z)$ and
+$\beta_k=[z^k]\prod_{j=1}^n(1+w_jz)$. Then the permanent in A322277
+\cite{permanentref} is
+\begin{equation}\label{permanentformula}
+ \operatorname{per}M(n)=\sum_{k=0}^n k!(n-k)!\,\alpha_k\beta_k.
+\end{equation}
+\end{corollary}
+\begin{proof}
+Expand $\sum_\sigma\prod_i(u_i+s_iw_{\sigma(i)})$ by the set $S$ of rows
+choosing the second summand. For $|S|=k$ and a fixed $k$-element image
+$J=\sigma(S)$, exactly $k!(n-k)!$ permutations have that image.
+The row products sum to $\alpha_k$ and the column products to $\beta_k$.
+This also proves the empty-matrix value $1$.
+\end{proof}
+
+\section{Generating functions and reciprocal sums}\label{generating}
+Write $a_n=A_n$, including $a_0=a_1=0$, and let
+$\Theta=x\,d/dx$. The following gives coefficient-level meanings to all
+the exponential expressions in A322844, FORMULA \cite{posing}.
+
+\begin{corollary}\label{gf}
+The ordinary generating function is
+\[
+ G(x)=\sum_{n\geq0}a_nx^n=
+ \frac{x^2(5+6x+43x^2+20x^3+43x^4+6x^5+5x^6)}{(1-x^2)^5}.
+\]
+Its even and odd subsequence generating functions are respectively
+\[
+ \sum_{m\geq0}a_{2m}x^m=\frac{x(5+43x+43x^2+5x^3)}{(1-x)^5},\quad
+ \sum_{m\geq0}a_{2m+1}x^m=\frac{2x(3+10x+3x^2)}{(1-x)^5}.
+\]
+Both subsequences satisfy the order-five recurrence with coefficients
+$5,-10,10,-5,1$, starting at subsequence index $m=5$.
+The exponential generating function in the usual convention is
+\begin{equation}\label{trueegf}
+ E(x):=\sum_{n\geq0}a_n\frac{x^n}{n!}
+ =\frac{e^x(2x^4+12x^3+15x^2+3x)
+       +e^{-x}(x^4-6x^3+9x^2-3x)}{12}.
+\end{equation}
+The usual exponential generating functions of $a_{2m}$ and $a_{2m+1}$
+are $(4\Theta^4+\Theta^2)e^x$ and
+$(4\Theta^4+8\Theta^3+5\Theta^2+\Theta)e^x/3$.
+\end{corollary}
+\begin{proof}
+The parity formulas give $a_{2m}=4m^4+m^2$ and
+$a_{2m+1}=(4m^4+8m^3+5m^2+m)/3$.
+Apply these polynomials in $\Theta$ to $(1-x)^{-1}$ for the ordinary
+functions, and to $e^x$ for their usual exponential counterparts.
+The fifth backward difference of each degree-four polynomial vanishes,
+giving the recurrence. For the full exponential function use
+\[
+ a_n=\frac{n^4}{6}+\frac{n^2}{12}
+       +(-1)^n\left(\frac{n^4}{12}+\frac{n^2}{6}\right)
+\]
+and $\Theta^2e^x=(x^2+x)e^x$,
+$\Theta^4e^x=(x^4+6x^3+7x^2+x)e^x$; replace $x$ by $-x$
+in the alternating part. These calculations prove all identities.
+\end{proof}
+The overall expression labelled ``E.g.f.'' in A322844 is instead
+\begin{equation}\label{shifted}
+ F(x)=\sum_{n\geq0}\frac{a_nx^n}{(n+2)!}
+ =\frac{e^{-x}(24+21x+9x^2+2x^3+x^4)-60
+       +e^x(36-33x+15x^2-4x^3+2x^4)}{12x^2}.
+\end{equation}
+In particular $[x^2]F=5/24$, whereas $[x^2]E=5/2$.
+The corrected usual EGF is \eqref{trueegf}. To verify the exact
+interpretation \eqref{shifted}, differentiate $x^2F(x)$ twice:
+the result is $E(x)$, with both integration constants zero at $0$.
+The two displayed subsequence exponential expressions have the exact meanings
+\begin{align*}
+ H_o(x)&=\sum_{m\geq0}\frac{a_{2m+1}x^m}{(2m+1)!}
+ =\frac{6x\cosh\sqrt{x}+\sqrt{x}(6+x)\sinh\sqrt{x}}{12},\\
+ H_e(x)&=\sum_{m\geq0}\frac{a_{2m}x^m}{(2m)!}
+ =\frac{x(8+x)\cosh\sqrt{x}+2\sqrt{x}(1+3x)\sinh\sqrt{x}}{4}.
+\end{align*}
+Indeed $H_e(t^2)=(E(t)+E(-t))/2$ and
+$tH_o(t^2)=(E(t)-E(-t))/2$. These identities are formal power series,
+so no square-root branch is involved. They distinguish the displayed
+functions from subsequence EGFs with denominator $m!$.
+
+\begin{corollary}[The three reciprocal sums]\label{recip}
+The reciprocal identities recorded in A322844 are
+\begin{align*}
+ \sum_{m\geq1}\frac1{a_{2m}}&=2+\frac{\pi^2}{6}-\pi\coth(\pi/2),\\
+ \sum_{m\geq1}\frac1{a_{2m+1}}&=15-\frac{3\pi^2}{2},\\
+ \sum_{n\geq2}\frac1{a_n}&=17-\frac{4\pi^2}{3}-\pi\coth(\pi/2).
+\end{align*}
+\end{corollary}
+\begin{proof}
+All sums converge since $a_n$ grows as a positive constant times $n^4$.
+For even indices, $1/a_{2m}=1/m^2-1/(m^2+1/4)$.
+The partial-fraction expansion of $\coth z$ \cite{dlmf}, at $z=\pi/2$,
+gives $\sum_{m\geq1}(m^2+1/4)^{-1}=\pi\coth(\pi/2)-2$.
+For odd $n\geq3$, $1/a_n=12((n^2-1)^{-1}-n^{-2})$;
+the two sums are $1/4$ and $\pi^2/8-1$, respectively.
+Here the first telescopes after writing $n=2m+1$, and the second follows
+from $\sum_{m\geq1}m^{-2}=\pi^2/6$. Adding the parity sums proves the last identity.
+\end{proof}
+
+\section{Coverage and verification}
+The source statements and their mathematical coverage are as follows.
+{\small
+\begin{longtable}{@{}p{.43\linewidth}p{.52\linewidth}@{}}
+\toprule
+Source item&Coverage\\\midrule
+\endhead
+A322844, COMMENTS, first conjecture; original revision 2, 28 Dec 2018&Proved: $|e_2|=A_n$, and more precisely $e_2=-A_n$, Theorem~\ref{main}.\\
+A322844, COMMENTS, second conjecture; original revision 5, 6 Jan 2019&Reproved; prior general rank proof: Vinay (2019), followed by Wicklin (2021). Its specialization gives $e_k=0$ for $k>2$, including $k>n$.\\
+Arbitrary row-direction patterns&Not posed; explicit quadratic proved in Corollary~\ref{directions}. Higher-exterior vanishing specializes the same prior rank argument.\\
+2012 Miranda construction announcements&Not covered: relation of their unavailable mathematical texts to the spectral coefficient remains unresolved.\\
+A317614, determinant; rank link A130130&Reproved: determinant labelled proved by 24 Aug 2018; rank asserted 9 Apr 2023. Neither entry prints an argument.\\
+A317614, FORMULA, even-trace decomposition, 28 Dec 2018&Reproved with a spectral interpretation, Corollary~\ref{even}; the minimum-eigenvalue formula is not posed as a conjecture.\\
+A317614, concentric-distance matrix, COMMENTS (2021)&Reproved by the centered-absolute-value sum following \eqref{rowcol}.\\
+A317614, fourth-power generation algorithm and other arithmetic descriptions&Not covered; these descriptions are separate from the matrix identities.\\
+A317297, maximum-eigenvalue conjecture (Spezia, 27 Dec 2018)&Refuted-and-corrected for the literal printed indexing: $26\ne34$ at $r=3$. Proved for $M(2r-2)$, Corollary~\ref{even}.\\
+A241016, A317617, sum triangles&Reproved in \eqref{rowcol}; even-order transpose sums proved by De Los Reyes et al. (2007); general formulas recorded in \cite{sums}.\\
+A323723, A323724, first off-diagonals&Reproved with prior formulas \cite{diagonals}; parity and the asserted exclusion of terminal digit $4$ proved in Corollary~\ref{lastdigits}.\\
+A325516, A325655, all off-diagonals&Proved in \eqref{upper}--\eqref{lower}; prior formulas cited in \cite{diagonals}.\\
+A074147, linked antidiagonals&Not asserted in the source: the fixed-size interpretation fails at $n=4$; \eqref{anti} gives the actual entries.\\
+A382597, product and trailing zeros of the main antidiagonal&Reproved in Corollary~\ref{antiproduct}; prior statements credited to Spezia (2025).\\
+A037270, all-entry sum; A002415&$\sum_{ij}M(n)_{ij}=n^2(n^2+1)/2$ by \eqref{rowcol}; $A_n=\text{A037270}(n)/2$ for even $n$ and $A_n=\text{A002415}(n)$ for odd $n$.\\
+A322277, permanent&Not posed as a conjecture; coefficient formula proved in Corollary~\ref{permanent}.\\
+A322844, ordinary GFs and parity recurrences&Proved in Corollary~\ref{gf}; prior formulas cited in \cite{posing}.\\
+A322844, overall displayed EGF&Refuted-and-corrected under the usual $n!$ convention: $5/24\ne5/2$ at $x^2$; correct formulas \eqref{trueegf}--\eqref{shifted}.\\
+A322844, displayed subsequence exponential expressions&Exact factorial conventions proved after \eqref{shifted}; usual $m!$ EGFs in Corollary~\ref{gf}.\\
+A322844, three reciprocal sums&Proved in Corollary~\ref{recip}; prior formulas cited in \cite{posing}.\\
+A317297, generating functions and recurrence&Proved in Corollary~\ref{triangle}; prior formulas cited in \cite{eigen}.\\
+A317297, quartic-difference and ternary-word descriptions (2024--25)&Reproved in Corollary~\ref{triangle}; prior identities credited to Oktar (2024) and Navarrete (2025).\\
+A317297, A246697 bisection conjecture; all four A246697 FORMULA conjectures&Proved by the row-sum calculation in Corollary~\ref{triangle}, including $b(r)=c(2r-3)$ for $r\geq2$.\\
+A246696, COMMENTS, permutation and parity counts&Permutation property proved; even-row odd count refuted-and-corrected from $[(m+1)/2]$ to $m+1$, Corollary~\ref{permutation}.\\
+\bottomrule
+\end{longtable}}
+The all-dimensional proofs above cover the characteristic polynomial,
+spectrum, linear sums, permanent formula and analytic identities.
+In the pinned Lean sources,
+\href{https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean}{\texttt{result} in the second-exterior file}
+proves the formal statement $|e_2(M(n))|=A_n$ for $n>1$, using the coefficient convention
+\eqref{exterior}; its \texttt{charpoly\_factor} declaration gives the
+$n$-to-$2$ characteristic reduction over $\mathbb Q$ for $n\geq2$.
+The companion
+\href{https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineHigherExteriorTrace.lean}{\texttt{result} in the higher-exterior file}
+proves the formal statement $e_k(M(n))=0$ for all $n\geq0$ and $k>2$.
+Neither result declaration asserts the spectral or generating-function
+corollaries; those are written proofs here. The signed identity $e_2=-A_n$
+is also established in the written proof; the first \texttt{result}
+declaration asserts its absolute-value version.
+The accompanying exact-arithmetic checker compares the full characteristic
+polynomial for $0\leq n\leq24$, all principal-minor exterior traces for
+$0\leq n\leq8$, the first eight power traces for $2\leq n\leq24$,
+and the row, column and diagonal formulas for $1\leq n\leq100$.
+It additionally compares the permanent formula with direct permutation sums
+through $n=8$, even-dimensional characteristic polynomials through $n=24$,
+the explicit $4\times4$ indexing example, and exact generating-function
+coefficients and parity recurrences. These finite comparisons complement
+the all-$n$ written proofs. Further comparisons cover the first 101 rows
+of A246696, the parity counts and disjoint paired parity intervals
+through row 100, and first off-diagonal parity and terminal digits
+through dimension 100.
+
+\begin{thebibliography}{99}
+\bibitem{posing} S. Spezia, OEIS \href{https://oeis.org/A322844}{A322844},
+COMMENTS (the two exterior-trace conjectures) and FORMULA;
+\href{https://oeis.org/history?seq=A322844\&start=60}{original revisions 2 and 5},
+28 December 2018 and 6 January 2019.
+\bibitem{matrix} S. Spezia, OEIS \href{https://oeis.org/A317614}{A317614},
+1 August 2018, COMMENTS (matrix definition, determinant, and rank link
+\href{https://oeis.org/A130130}{A130130}).
+The determinant statement is present in revision 89 (24 August 2018);
+the rank cross-reference was added in revision 151 (9 April 2023).
+\bibitem{sums} OEIS \href{https://oeis.org/A241016}{A241016} and
+\href{https://oeis.org/A317617}{A317617}, sum-triangle definitions and formulas;
+\href{https://oeis.org/A037270}{A037270}, sum of the first $n^2$ integers;
+\href{https://oeis.org/A002415}{A002415}, $(n^4-n^2)/12$.
+\bibitem{diagonals} S. Spezia, OEIS
+\href{https://oeis.org/A323723}{A323723},
+\href{https://oeis.org/A323724}{A323724},
+\href{https://oeis.org/A325516}{A325516} and
+\href{https://oeis.org/A325655}{A325655}, diagonal-sum definitions and formulas.
+\bibitem{antidiagonal} A. Murthy, OEIS
+\href{https://oeis.org/A074147}{A074147}, 28 August 2002, defining triangle.
+\bibitem{eigen} S. Spezia, OEIS \href{https://oeis.org/A317614}{A317614},
+FORMULA, 28 December 2018, even-trace decomposition; O. E. Pol,
+OEIS \href{https://oeis.org/A317297}{A317297}, 1 September 2018,
+including Spezia's COMMENTS of 27 December 2018,
+maximum-eigenvalue conjecture and displayed matrix definition.
+\bibitem{permanentref} S. Spezia, OEIS
+\href{https://oeis.org/A322277}{A322277}, 1 December 2018,
+serpentine-matrix permanent sequence.
+\bibitem{dlmf} NIST Digital Library of Mathematical Functions,
+\href{https://dlmf.nist.gov/4.36.E3}{Eq.~4.36.3}, partial-fraction expansion
+of $\coth z$.
+\bibitem{trianglelinks} C. Kimberling, OEIS
+\href{https://oeis.org/A246697}{A246697}, 2 September 2014,
+FORMULA; \href{https://oeis.org/A246696}{A246696}, defining triangle recurrence.
+\bibitem{antiproductref} S. Spezia, OEIS
+\href{https://oeis.org/A382597}{A382597}, 31 March 2025,
+main-antidiagonal product and trailing-zero statement.
+\bibitem{rectangles} J. P. De Los Reyes, A. Das, C. K. Midha and
+P. Vellaisamy, \emph{On a method to construct magic rectangles of even order},
+Technical Report isid/ms/2007/09, Indian Statistical Institute, Delhi,
+5 July 2007, Step A1 and Appendix (i)--(ii).
+\href{http://www.isid.ac.in/\string~statmath/eprints/2007/isid200709.pdf}{Official report}.
+\bibitem{vinay} M. Vinay, answer to
+\href{https://math.stackexchange.com/a/3182097}{``Linear system with constants in arithmetic progression''},
+Mathematics Stack Exchange, 10 April 2019 (edited 11 April 2019),
+numbered step 2, the general column-span identity.
+\bibitem{wicklin} R. Wicklin,
+\href{https://blogs.sas.com/content/iml/2021/02/08/matrix-singular-rows-arithmetic-sequences.html}{``A matrix is singular if its rows are arithmetic sequences''},
+The DO Loop, SAS, 8 February 2021, ``Why are these matrices singular?''
+\bibitem{miranda2012} L. B. Bacelar Miranda,
+\href{https://pyaugohy.blogspot.com/2012/09/semi-magic-squares-from-snake-shaped.html}{``Semi-Magic Squares From Snake-Shaped Matrices''},
+announcement, 15 September 2012; L'hau\~a Barbosa Pereira de Miranda,
+Liuhan Oliveira de Miranda, Lohans de Oliveira Miranda and
+Lossian Barbosa Bacelar Miranda,
+\href{https://pyaugohy.blogspot.com/2012/09/computation-of-semi-magic-squares.html}{``Computation of Semi-Magic Squares Generated by Serpentine Matrices''},
+announcement, 19 September 2012.
+\end{thebibliography}
+\end{document}
