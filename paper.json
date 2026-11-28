@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24408322",
     "current_version": 3,
     "doi": "10.5281/zenodo.24408323",
+    "kind": "note",
     "lean_source": {
       "revision": "d9bb8a406783c5222849b798f3c2ab738f653d75",
       "url": "https://github.com/the-omega-institute/trureturing/blob/d9bb8a406783c5222849b798f3c2ab738f653d75/D5/S3/Quantum/Matrix/SpeziaSerpentineSecondExteriorTrace.lean"
@@ -55,10 +56,12 @@
     "title": "Spectral extensions of Vinay (2019) and Wicklin (2021): resolving Spezia's conjectures in OEIS A322844, COMMENTS, 28 December 2018 and 6 January 2019",
     "versions": [
       {
+        "changelog": null,
         "previous_version": null,
         "published_on": "2026-11-22T23:23:20.543727010Z",
         "revision": "3",
-        "version": 3
+        "version": 3,
+        "version_label": null
       }
     ],
     "work": "sp322844-serpentine"
